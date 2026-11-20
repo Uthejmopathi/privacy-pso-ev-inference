@@ -1,0 +1,39 @@
+digraph G {
+graph [rankdir=TB, fontname="Helvetica", fontsize=14, nodesep=0.15, ranksep=0.22, margin=0.02, newrank=true, labeljust=l];
+node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=13, fillcolor="#ececec", color="#7f8c8d", margin="0.06,0.03"];
+edge [color="#555555", arrowsize=0.6, fontname="Helvetica", fontsize=12];
+subgraph cluster_data { label="1. Data layer"; style="rounded,filled"; fillcolor="#f5f6f7"; color="#bdc3c7";
+  logs [label="EV logs: 15,000\nrequests (x, a)"];
+  prep [label="MAD outliers,\nimputation"];
+}
+subgraph cluster_sur { label="2. Surrogates (LightGBM)"; labeljust=r; style="rounded,filled"; fillcolor="#f5f6f7"; color="#bdc3c7";
+  sdl [label="p_dl\nEq. (1)"]; sen [label="P_E\nEq. (2)"]; sth [label="P_T\nEq. (3)"];
+}
+subgraph cluster_pso { label="3. Proposed PSO policy search"; style="rounded,filled"; fillcolor="#fdf1ef"; color="#e6b0aa";
+  node [fillcolor="#f8d3cc", color="#c0392b"];
+  init [label="Init swarm\nθ_i ∈ [lb, ub]^8"];
+  pol [label="Score s_a, Eq. (4)\nmask: ρ≥2 → no offload"];
+  fit [label="Fitness J(θ)\nEq. (6)"];
+  upd [label="Update v_i, θ_i\nEqs. (7)-(8)"];
+  conv [shape=diamond, style="filled", label="k = K?", margin="0.02,0.01"];
+}
+subgraph cluster_eval { label="4. Deployment and evaluation"; style="rounded,filled"; fillcolor="#f5f6f7"; color="#bdc3c7";
+  dep [label="a* = argmax s_a\n(per request)", fillcolor="#f8d3cc", color="#c0392b"];
+  base [label="Baselines:\nlocal, offload,\nthreshold, RS"];
+  twin [label="Outcome twin\n200 MC draws"];
+  met [label="DH, E, V_E,\nV_T, V_P (9)"];
+}
+{rank=same; logs; prep}
+{rank=same; sdl; sen; sth}
+{rank=same; init; pol}
+{rank=same; conv; upd; fit}
+{rank=same; dep; base}
+{rank=same; twin; met}
+logs -> prep;
+prep -> sdl; prep -> sen; prep -> sth;
+sen -> pol [label=" S(x,a)"];
+init -> pol; pol -> fit; fit -> upd; upd -> conv;
+conv -> pol [label="no", color="#c0392b", fontcolor="#c0392b"];
+conv -> dep [label=" yes: θ*=g"];
+dep -> twin; base -> twin; twin -> met;
+}

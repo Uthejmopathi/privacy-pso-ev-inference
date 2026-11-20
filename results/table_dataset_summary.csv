@@ -1,0 +1,12 @@
+Item,Value
+Requests (train 2025 / test 2026 H1),"10,060 / 4,940"
+Vehicles / task types / modalities,800 / 7 / 5
+Privacy level 0/1/2/3 (%),45.0 / 18.7 / 11.6 / 24.7
+Logged action full/int8/offload/defer (%),31.7 / 34.2 / 22.8 / 11.3
+"NPU temperature, mean (max) [deg C]",42.9 (87.1)
+"Network RTT, median (p95) [ms]",125 (237)
+"Latency, median (p95) [ms]",601 (19810)
+"Energy per request, median [J]",5.29
+Logged deadline-hit rate (%),64.9
+Missing RTT / SoC temp / CPU (rows),167 / 345 / 337
+Outliers repaired RTT / tokens (rows),49 / 23

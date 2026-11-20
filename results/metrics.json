@@ -1,0 +1,646 @@
+{
+ "surrogate": {
+  "Deadline met (clf)|ROC-AUC": 0.9405,
+  "Deadline met (clf)|Brier": 0.0858,
+  "log energy (reg)|R2": 0.846,
+  "log temp. rise (reg)|R2": 0.9766,
+  "quality (reg)|R2": 0.6238
+ },
+ "surrogate_sigma": {
+  "le": 0.3809,
+  "lr": 0.2322,
+  "q": 0.041
+ },
+ "threshold_params": {
+  "T_npu": 35.0,
+  "SoC": 0.0,
+  "RTT": 1000000000.0,
+  "deadline": 1000000000.0
+ },
+ "main": {
+  "Always-local (full)": {
+   "deadline_hit": [
+    0.6266,
+    0.0002
+   ],
+   "quality": [
+    0.88,
+    0.0
+   ],
+   "energy_J": [
+    17.9236,
+    0.0068
+   ],
+   "energy_viol": [
+    0.4163,
+    0.0003
+   ],
+   "thermal_viol": [
+    0.0423,
+    0.0001
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.0666,
+    0.0002
+   ]
+  },
+  "Always-local (int8)": {
+   "deadline_hit": [
+    0.8108,
+    0.0002
+   ],
+   "quality": [
+    0.7978,
+    0.0
+   ],
+   "energy_J": [
+    6.9703,
+    0.0026
+   ],
+   "energy_viol": [
+    0.1498,
+    0.0003
+   ],
+   "thermal_viol": [
+    0.0222,
+    0.0
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2097,
+    0.0002
+   ]
+  },
+  "Always-offload (masked)": {
+   "deadline_hit": [
+    0.7832,
+    0.0003
+   ],
+   "quality": [
+    0.8823,
+    0.0
+   ],
+   "energy_J": [
+    5.9735,
+    0.0025
+   ],
+   "energy_viol": [
+    0.1094,
+    0.0002
+   ],
+   "thermal_viol": [
+    0.0208,
+    0.0
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2243,
+    0.0003
+   ]
+  },
+  "Threshold (tuned)": {
+   "deadline_hit": [
+    0.7832,
+    0.0003
+   ],
+   "quality": [
+    0.8823,
+    0.0
+   ],
+   "energy_J": [
+    5.9735,
+    0.0025
+   ],
+   "energy_viol": [
+    0.1094,
+    0.0002
+   ],
+   "thermal_viol": [
+    0.0208,
+    0.0
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2243,
+    0.0003
+   ]
+  },
+  "Random search": {
+   "deadline_hit": [
+    0.7967,
+    0.0072
+   ],
+   "quality": [
+    0.8787,
+    0.0051
+   ],
+   "energy_J": [
+    5.8081,
+    0.3309
+   ],
+   "energy_viol": [
+    0.0917,
+    0.0029
+   ],
+   "thermal_viol": [
+    0.0175,
+    0.0001
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.236,
+    0.0052
+   ]
+  },
+  "PSO (proposed)": {
+   "deadline_hit": [
+    0.8029,
+    0.0014
+   ],
+   "quality": [
+    0.8789,
+    0.0024
+   ],
+   "energy_J": [
+    5.7836,
+    0.132
+   ],
+   "energy_viol": [
+    0.0958,
+    0.0023
+   ],
+   "thermal_viol": [
+    0.0174,
+    0.0001
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2423,
+    0.0009
+   ]
+  },
+  "Logged field controller": {
+   "deadline_hit": [
+    0.6615,
+    0.0002
+   ],
+   "quality": [
+    0.8648,
+    0.0
+   ],
+   "energy_J": [
+    9.7873,
+    0.0046
+   ],
+   "energy_viol": [
+    0.2096,
+    0.0003
+   ],
+   "thermal_viol": [
+    0.027,
+    0.0
+   ],
+   "privacy_viol": [
+    0.0298,
+    0.0
+   ],
+   "utility": [
+    1.0939,
+    0.0002
+   ]
+  }
+ },
+ "pso_theta_mean": {
+  "w_dl": 1.287,
+  "w_q": 1.764,
+  "w_E": 0.16,
+  "w_T": 4.847,
+  "w_X": 0.052,
+  "b_int8": 0.664,
+  "b_off": 0.538,
+  "b_def": 0.556
+ },
+ "pso_train_fitness": [
+  -1.176,
+  -1.1732,
+  -1.1775,
+  -1.1752,
+  -1.1787
+ ],
+ "rs_train_fitness": [
+  -1.1643,
+  -1.169,
+  -1.167,
+  -1.1653,
+  -1.1688
+ ],
+ "significance": {
+  "Always-local (full)": {
+   "delta": 0.1766,
+   "p": 0.0
+  },
+  "Always-local (int8)": {
+   "delta": -0.0076,
+   "p": 2.4e-66
+  },
+  "Always-offload (masked)": {
+   "delta": 0.0202,
+   "p": 4.54e-43
+  },
+  "Threshold (tuned)": {
+   "delta": 0.0202,
+   "p": 4.54e-43
+  },
+  "Random search": {
+   "delta": 0.0169,
+   "p": 1.01e-58
+  },
+  "Logged field controller": {
+   "delta": 0.1418,
+   "p": 5.27e-252
+  }
+ },
+ "pso_action_share": {
+  "local_full": 0.0,
+  "local_quantized": 0.3917,
+  "secure_offload": 0.5609,
+  "deferred": 0.0474
+ },
+ "logged_action_share": {
+  "local_full": 0.3192,
+  "local_quantized": 0.3466,
+  "secure_offload": 0.2263,
+  "deferred": 0.1079
+ },
+ "ablation": {
+  "full PSO policy": {
+   "deadline_hit": [
+    0.8025,
+    0.0018
+   ],
+   "quality": [
+    0.8795,
+    0.0027
+   ],
+   "energy_J": [
+    5.8127,
+    0.1515
+   ],
+   "energy_viol": [
+    0.0956,
+    0.0022
+   ],
+   "thermal_viol": [
+    0.0174,
+    0.0001
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2422,
+    0.0012
+   ]
+  },
+  "no thermal term (w_T=0)": {
+   "deadline_hit": [
+    0.7935,
+    0.0033
+   ],
+   "quality": [
+    0.8838,
+    0.0013
+   ],
+   "energy_J": [
+    5.5512,
+    0.0551
+   ],
+   "energy_viol": [
+    0.0961,
+    0.0017
+   ],
+   "thermal_viol": [
+    0.0199,
+    0.0004
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2354,
+    0.0027
+   ]
+  },
+  "no energy term (w_E=0)": {
+   "deadline_hit": [
+    0.8027,
+    0.0008
+   ],
+   "quality": [
+    0.8771,
+    0.0009
+   ],
+   "energy_J": [
+    5.6426,
+    0.005
+   ],
+   "energy_viol": [
+    0.099,
+    0.0003
+   ],
+   "thermal_viol": [
+    0.0174,
+    0.0
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2413,
+    0.0004
+   ]
+  },
+  "no privacy mask (soft exposure only)": {
+   "deadline_hit": [
+    0.8023,
+    0.0034
+   ],
+   "quality": [
+    0.8556,
+    0.0071
+   ],
+   "energy_J": [
+    6.0345,
+    0.2933
+   ],
+   "energy_viol": [
+    0.0985,
+    0.001
+   ],
+   "thermal_viol": [
+    0.0174,
+    0.0
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2301,
+    0.0006
+   ]
+  },
+  "no penalties in fitness (utility only)": {
+   "deadline_hit": [
+    0.8037,
+    0.0001
+   ],
+   "quality": [
+    0.8811,
+    0.0
+   ],
+   "energy_J": [
+    6.428,
+    0.024
+   ],
+   "energy_viol": [
+    0.1222,
+    0.0006
+   ],
+   "thermal_viol": [
+    0.0213,
+    0.0001
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2442,
+    0.0002
+   ]
+  },
+  "untuned surrogate-greedy (theta fixed)": {
+   "deadline_hit": [
+    0.8001,
+    0.0001
+   ],
+   "quality": [
+    0.8635,
+    0.0
+   ],
+   "energy_J": [
+    5.9033,
+    0.0033
+   ],
+   "energy_viol": [
+    0.0845,
+    0.0002
+   ],
+   "thermal_viol": [
+    0.0177,
+    0.0
+   ],
+   "privacy_viol": [
+    0.0,
+    0.0
+   ],
+   "utility": [
+    1.2319,
+    0.0001
+   ]
+  }
+ },
+ "sens_epsE": {
+  "PSO|0.04": [
+   0.6858,
+   0.0484
+  ],
+  "PSO|0.07": [
+   0.7752,
+   0.0701
+  ],
+  "PSO|0.1": [
+   0.8025,
+   0.0956
+  ],
+  "PSO|0.15": [
+   0.802,
+   0.1102
+  ],
+  "PSO|0.2": [
+   0.8015,
+   0.1115
+  ],
+  "Threshold|0.04": [
+   0.783,
+   0.1094
+  ],
+  "Threshold|0.07": [
+   0.783,
+   0.1094
+  ],
+  "Threshold|0.1": [
+   0.783,
+   0.1094
+  ],
+  "Threshold|0.15": [
+   0.783,
+   0.1094
+  ],
+  "Threshold|0.2": [
+   0.783,
+   0.1094
+  ]
+ },
+ "thermal_stress": {
+  "Always-local (int8)|0": [
+   0.8107,
+   0.0222
+  ],
+  "Always-local (int8)|5": [
+   0.8103,
+   0.069
+  ],
+  "Always-local (int8)|10": [
+   0.8092,
+   0.1522
+  ],
+  "Always-local (int8)|15": [
+   0.8061,
+   0.2697
+  ],
+  "Always-local (int8)|20": [
+   0.7997,
+   0.4151
+  ],
+  "PSO (re-optimised)|0": [
+   0.8025,
+   0.0174
+  ],
+  "PSO (re-optimised)|5": [
+   0.8007,
+   0.0565
+  ],
+  "PSO (re-optimised)|10": [
+   0.7859,
+   0.1321
+  ],
+  "PSO (re-optimised)|15": [
+   0.7806,
+   0.2361
+  ],
+  "PSO (re-optimised)|20": [
+   0.7834,
+   0.3816
+  ],
+  "PSO (static, dT=0)|0": [
+   0.8032,
+   0.0173
+  ],
+  "PSO (static, dT=0)|5": [
+   0.7997,
+   0.0565
+  ],
+  "PSO (static, dT=0)|10": [
+   0.7957,
+   0.1321
+  ],
+  "PSO (static, dT=0)|15": [
+   0.7888,
+   0.2361
+  ],
+  "PSO (static, dT=0)|20": [
+   0.7869,
+   0.3816
+  ],
+  "Threshold (re-tuned)|0": [
+   0.783,
+   0.0208
+  ],
+  "Threshold (re-tuned)|5": [
+   0.7828,
+   0.063
+  ],
+  "Threshold (re-tuned)|10": [
+   0.7823,
+   0.142
+  ],
+  "Threshold (re-tuned)|15": [
+   0.781,
+   0.2542
+  ],
+  "Threshold (re-tuned)|20": [
+   0.7783,
+   0.3948
+  ]
+ },
+ "swarm": [
+  [
+   10,
+   242,
+   -1.1765,
+   0.003
+  ],
+  [
+   20,
+   120,
+   -1.1776,
+   0.0015
+  ],
+  [
+   30,
+   80,
+   -1.1756,
+   0.0022
+  ],
+  [
+   60,
+   39,
+   -1.1768,
+   0.0018
+  ]
+ ],
+ "config": {
+  "T_LIM": 65.0,
+  "EPS_E": 0.1,
+  "EPS_T": 0.03,
+  "KAPPA": 200.0,
+  "LAMBDA_Q": 0.5,
+  "MU": 20.0,
+  "N_PART": 30,
+  "N_ITER": 80,
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "n_train": 10060,
+  "n_test": 4940
+ },
+ "runtime_s": 391.1
+}

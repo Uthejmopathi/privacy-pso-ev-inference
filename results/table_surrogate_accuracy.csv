@@ -1,0 +1,6 @@
+Surrogate,Metric,Value
+Deadline met (clf),ROC-AUC,0.9404624817154773
+Deadline met (clf),Brier,0.08575369594253597
+log energy (reg),R2,0.84597735149335
+log temp. rise (reg),R2,0.9766411261697111
+quality (reg),R2,0.6237717558521363
